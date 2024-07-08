@@ -125,7 +125,8 @@
   right: 0;
   z-index: 1000;
   background-color: #FFF; }
-  .drawer_menu .drawer_nav_wrapper.open {
+
+  .drawer_menu .drawer_nav_wrapper.open { 
     transform: translate(0); }
 
 .drawer_menu.left .drawer_button {
