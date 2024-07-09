@@ -35,10 +35,16 @@ $(document).ready(function(){
         function displayResult(item){
             const $listItem = $('<li class="lists-item list-inner"></li>');
             // クラスを付与したリスト要素を生成し変数に代入
+            const infoLink = $('<a>').text(info).attr({
+                'href':item.link['@id'],
+                'target':'_blank'
+            });//書籍情報からリンク先に飛べるようにaタグにhref設定 
+            const authorText = item['dc:creator'] ? item['dc:creator'] : '作者不明';
+            // item['dc:creator']がtrueだった場合はそのまま値を返し、falseだった場合は'作者不明'を返す、authorTextという変数を作成
             $listItem.append($('<p>').text(title + item.title));
-            $listItem.append($('<p>').text(creator + item['dc:creator'])); 
+            $listItem.append($('<p>').text(creator + authorText));
             $listItem.append($('<p>').text(publisher+ item['dc:publisher'][0])); 
-            $listItem.append($('<a>').text(info)); 
+            $listItem.append(infoLink);
             return $listItem;
             // 生成されたHTML要素を呼び出し元で使用出来るように、値を返す
         };
