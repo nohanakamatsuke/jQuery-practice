@@ -75,10 +75,9 @@ $("document").ready(function(){
         console.log(node);
         //変数nodeをコンソールに出力
     });
-    $(".center:eq(7) .btn").on('hover',
-        function(){
-        // .center８番目の　.btn要素に対して、clickを行った時に処理を実行
-        $(".center:eq(7) .btn").css({
+    $(".center:eq(7) .btn").hover(function(){
+        // .center８番目の　.btn要素に対して、hoverを行った時に処理を実行
+        $(this).css({
             // .指定したセレクタに対して、cssを変更する
                 "width": "300px",
                 // 横幅を300px
@@ -90,12 +89,12 @@ $("document").ready(function(){
          },
          function() { 
             // マウスアウト時の処理
-            $(".center:eq(7) .btn").css({
+            $(this).css({
               "width": "200px", // 元のサイズに戻す
               "padding": "25px 0", // 元の余白に戻す
               "font-size": "inherit" // 文字サイズを戻す
             });
-          }
+         }
     );
     $("#q9 li").on('click', function(){
         // idの値がq9の、li要素に対してクリックを行った時に処理を実行
