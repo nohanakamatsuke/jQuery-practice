@@ -10,5 +10,14 @@ $(document).ready(function(){
         // displayで非表示にしていた、背景色を表示したり非表示にしたりする
         // fadeToggleメソッドを使用することでゆっくりと表示、非表示にする
         // toggleメソッドを使うことで表示・非表示を簡潔に実現できる
+        $(".drawer_bg").on('click', function(){
+            // 背景をクリックした時に処理を実行する
+            $(".drawer_nav_wrapper").removeClass("open");
+            // メニューバーを非表示にする
+            $(".drawer_button").removeClass("active");
+            // CLOSEボタンを非表示にしてメニューボタンを表示する
+            $(".drawer_bg").fadeOut();
+            // 黒い背景ををフェードアウトさせる
+        });
     });
 });
